@@ -13,7 +13,7 @@ Android高性能日志框架，支持自定义Printer，内置LogcatPrinter和Di
 #### 1.下载AAR并添加到项目中。
 
 ```groovy
-implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
 ```
 
 #### 2.初始化Logger添加Printer。
@@ -26,13 +26,14 @@ Logger.addPrinter(DiskPrinter(File(cacheDir, "logs")).apply {
     setMaxFileCount(5)
 })
 ```
+
 DiskPrinter会将日志记录到指定目录下的日志文件中：
 ![日志文件](assets/logs.png)
 
 #### 3.调用Logger方法打印日志。
 
 ```kotlin
-    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
+override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
     Logger.i("Logger", "onActivityCreated:" + activity.localClassName)
 }
 ```
@@ -54,6 +55,7 @@ val dir = File(cacheDir, "zip_logs")
 val fileName = "${System.currentTimeMillis()}"
 val output = printer.zipLatestLogs(dir, fileName, 5 * 1024 * 1024)
 ```
+
 压缩日志会将所有日志文件合并到一个文件中然后输出zip文件：
 ![压缩日志文件](assets/zip_log.png)
 ![解压日志文件](assets/full_logs.png)
