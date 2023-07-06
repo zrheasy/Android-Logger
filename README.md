@@ -6,7 +6,7 @@ Android高性能日志框架，支持自定义Printer，内置LogcatPrinter和Di
 2. 支持设置分片日志文件大小和文件数；
 3. 支持zip压缩合并日志文件；
 
-[下载地址](https://github.com/zrh1994/Android-Logger/releases/download/v1.0.0/logger-v1.0.aar)
+[下载地址](https://github.com/zrheasy/Android-Logger/releases/download/v1.0.0/logger-v1.0.aar)
 
 ### 使用步骤
 
